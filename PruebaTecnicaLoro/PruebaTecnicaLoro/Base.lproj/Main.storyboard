@@ -15,35 +15,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zcy-dJ-tNV">
-                                <rect key="frame" x="20" y="104" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1kh-dh-S8q">
-                                <rect key="frame" x="20" y="158" width="374" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AF2-c7-GRI">
-                                <rect key="frame" x="171" y="243" width="72" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <segue destination="izE-1V-yUH" kind="show" id="Qkb-26-ROB"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lg2-jX-YZd">
+                                <rect key="frame" x="40" y="84" width="334" height="160"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zcy-dJ-tNV">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1kh-dh-S8q">
+                                        <rect key="frame" x="0.0" y="60" width="334" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AF2-c7-GRI">
+                                        <rect key="frame" x="0.0" y="120" width="334" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="hwM-P7-JgC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" red="0.0" green="0.75686274509803919" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1kh-dh-S8q" firstAttribute="height" secondItem="Zcy-dJ-tNV" secondAttribute="height" id="4Fn-oK-z2N"/>
+                                    <constraint firstItem="AF2-c7-GRI" firstAttribute="height" secondItem="Zcy-dJ-tNV" secondAttribute="height" id="wwi-hL-qEM"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="1kh-dh-S8q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3Ts-Bb-Uty"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zcy-dJ-tNV" secondAttribute="trailing" constant="20" id="3qy-y1-fp5"/>
-                            <constraint firstItem="1kh-dh-S8q" firstAttribute="top" secondItem="Zcy-dJ-tNV" secondAttribute="bottom" constant="20" id="DNc-3w-dvQ"/>
-                            <constraint firstItem="AF2-c7-GRI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J8V-JB-jSl"/>
-                            <constraint firstItem="Zcy-dJ-tNV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UFB-em-le3"/>
-                            <constraint firstItem="AF2-c7-GRI" firstAttribute="top" secondItem="1kh-dh-S8q" secondAttribute="bottom" constant="51" id="Xgo-K8-6yG"/>
-                            <constraint firstItem="Zcy-dJ-tNV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="oDw-ik-6Az"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1kh-dh-S8q" secondAttribute="trailing" constant="20" id="vEx-S8-AJx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lg2-jX-YZd" secondAttribute="trailing" constant="40" id="E51-fc-Gcy"/>
+                            <constraint firstItem="lg2-jX-YZd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="GlE-Ag-s5S"/>
+                            <constraint firstItem="lg2-jX-YZd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="hTt-On-pHB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -53,16 +59,16 @@
             </objects>
             <point key="canvasLocation" x="-107" y="-24"/>
         </scene>
-        <!--View Controller-->
+        <!--User View Controller-->
         <scene sceneID="6eF-zv-f7N">
             <objects>
-                <viewController id="Egg-hT-ytw" sceneMemberID="viewController">
+                <viewController id="Egg-hT-ytw" customClass="UserViewController" customModule="PruebaTecnicaLoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vEb-VU-VPi">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pVi-yX-cl8">
-                                <rect key="frame" x="87" y="80" width="240" height="240"/>
+                                <rect key="frame" x="87" y="124" width="240" height="240"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="7C1-gH-sEx"/>
@@ -70,18 +76,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxX-Ye-VUy">
-                                <rect key="frame" x="135" y="350" width="144" height="36"/>
+                                <rect key="frame" x="135" y="394" width="144" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIT-Vb-rfi">
-                                <rect key="frame" x="161.5" y="668" width="91" height="48"/>
+                                <rect key="frame" x="161.5" y="722" width="91" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Logout"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="tW6-t1-6YI"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -101,16 +104,16 @@
             </objects>
             <point key="canvasLocation" x="1848" y="352"/>
         </scene>
-        <!--View Controller-->
+        <!--Content View Controller-->
         <scene sceneID="2X7-X2-s21">
             <objects>
-                <viewController id="6wQ-sz-9Gr" sceneMemberID="viewController">
+                <viewController id="6wQ-sz-9Gr" customClass="ContentViewController" customModule="PruebaTecnicaLoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1D8-Yn-mGa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4V-5u-PQN">
-                                <rect key="frame" x="143" y="397" width="128" height="48"/>
+                                <rect key="frame" x="143" y="424" width="128" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Comment"/>
                                 <connections>
@@ -136,7 +139,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="YXs-qn-1KE" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nab-cs-TxE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="7OI-0D-A6o"/>
@@ -147,10 +150,10 @@
             </objects>
             <point key="canvasLocation" x="3610" y="-347"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home View Controller-->
         <scene sceneID="J8f-NE-BMN">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="izE-1V-yUH" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="izE-1V-yUH" customClass="HomeViewController" customModule="PruebaTecnicaLoro" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="hbV-rG-MeR"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bv4-IF-byZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -173,7 +176,7 @@
                     <tabBarItem key="tabBarItem" title="" image="content" id="CEc-7V-h3T"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uGc-99-lnm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
