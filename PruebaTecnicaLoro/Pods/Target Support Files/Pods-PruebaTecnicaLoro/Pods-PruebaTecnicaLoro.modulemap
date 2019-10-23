@@ -1,0 +1,6 @@
+framework module Pods_PruebaTecnicaLoro {
+  umbrella header "Pods-PruebaTecnicaLoro-umbrella.h"
+
+  export *
+  module * { export * }
+}

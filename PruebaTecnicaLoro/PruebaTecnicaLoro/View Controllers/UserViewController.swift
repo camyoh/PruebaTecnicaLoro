@@ -10,6 +10,9 @@ import UIKit
 
 class UserViewController: UIViewController {
 
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var emailLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,5 +29,14 @@ class UserViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func logOutTapped(_ sender: UIButton) {
+        transitionToLogin()
+    }
+    
+    func transitionToLogin () {
+        let loginViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.loginViewController) as? ViewController
+        view.window?.rootViewController = loginViewController
+        view.window?.makeKeyAndVisible()
+    }
+    
 }
