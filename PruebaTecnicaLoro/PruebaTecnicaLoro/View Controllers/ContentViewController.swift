@@ -11,32 +11,40 @@ import FirebaseDatabase
 
 class ContentViewController: UIViewController {
     
-    var posts = [Post]()
-    var ref = Database.database().reference()
-    var databaseHandle:DatabaseHandle?
-    //    lazy var posts = Firestore.firestore().collection("posts")
+    @IBOutlet weak var postsTableView: UITableView!
+    
+    var posts: [Post] = []
+    let ref = Database.database().reference(withPath: "posts")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //leer datos
-        //        let ref = Database.database().reference()
-        //        ref.child("posts/0/post").setValue("cambiando el post")
-        
-        //        let ref = Database.database().reference()
-        //        ref.child("posts").observeSingleEvent(of: .value) { (snapshot) in
-        //            let posts = snapshot.value
-        //            print(posts)
-        //    }
-        getPosts()
-        
+        getPostData()
     }
     
-    func getPosts (){
-        databaseHandle = ref.child("posts").observe(.childAdded) { (snapshot) in
-            if let post = snapshot.value as? [String:String] {
-                print(post)
+    func getPostData() {
+        ref.queryOrdered(byChild: "posts").observe(.value) { (snapshot) in
+            var newItems: [Post] = []
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                    let post = Post(snapshot: snapshot) {
+                    newItems.append(post)
+                }
             }
+            self.posts = newItems
+            self.postsTableView.reloadData()
         }
+    }
+}
+
+extension ContentViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let post = posts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostItem") as! PostCellTableViewCell
+        cell.fillCell(with: post)
+        return cell
     }
 }

@@ -16,6 +16,10 @@ class PostViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func cancerlarTapped(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
 
     /*
     // MARK: - Navigation

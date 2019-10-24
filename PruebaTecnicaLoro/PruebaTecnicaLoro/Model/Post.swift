@@ -7,15 +7,47 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
-struct Comentario: Codable {
-    let comentario: String?
-    let usuario: String?
+struct Comentario {
+    var comentario: String?
+    var usuario: String?
 }
 
-struct Post: Codable {
-    let post: String?
-    let usuario: String?
-    let foto: String?
-    let comentarios: [Comentario]
+struct Post {
+    let ref: DatabaseReference?
+    let foto: String
+    let post: String
+    let usuario: String
+    
+    
+    init (foto: String, post: String, usuario: String) {
+        self.ref = nil
+        self.foto = foto
+        self.post = post
+        self.usuario = usuario
+    }
+    
+    init?(snapshot: DataSnapshot) {
+        guard
+            let value = snapshot.value as? [String:AnyObject],
+            let foto = value["foto"] as? String,
+            let post = value["post"] as? String,
+            let usuario = value["usuario"] as? String else {
+            return nil
+        }
+        self.ref = snapshot.ref
+        self.foto = foto
+        self.post = post
+        self.usuario = usuario
+    }
+    
+    func toAnyObject() -> Any {
+        return [
+            "foto": foto,
+            "post": post,
+            "usuario": usuario
+        ]
+    }
 }
+
