@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Comentario {
+struct Comentario: Codable {
     let comentario: String?
     let usuario: String?
 }
 
-struct Post {
+struct Post: Codable {
     let post: String?
     let usuario: String?
     let photoUrl: URL?

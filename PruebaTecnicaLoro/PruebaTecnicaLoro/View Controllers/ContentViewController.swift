@@ -7,12 +7,24 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseDatabase
+
 
 class ContentViewController: UIViewController {
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+        
+        //leer datos
+//        let ref = Database.database().reference()
+//        ref.child("posts/0/post").setValue("cambiando el post")
 
+        let ref = Database.database().reference()
+        ref.child("posts").observeSingleEvent(of: .value) { (snapshot) in
+            print(snapshot.value)
+        }
+        
+    }
+    
 }
