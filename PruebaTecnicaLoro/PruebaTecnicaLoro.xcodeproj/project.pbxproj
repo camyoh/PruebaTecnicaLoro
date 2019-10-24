@@ -17,6 +17,8 @@
 		D0DDD68E235FD01E0029F954 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DDD68C235FD01E0029F954 /* Main.storyboard */; };
 		D0DDD690235FD0210029F954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0DDD68F235FD0210029F954 /* Assets.xcassets */; };
 		D0DDD693235FD0210029F954 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DDD691235FD0210029F954 /* LaunchScreen.storyboard */; };
+		D0F3F3C62361190F0099805D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3F3C52361190F0099805D /* User.swift */; };
+		D0F3F3C92361198C0099805D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F3F3C82361198C0099805D /* Post.swift */; };
 		D0F840ED2360B81E00370CB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0F840EC2360B81E00370CB3 /* GoogleService-Info.plist */; };
 		D0F840EF2360C17200370CB3 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F840EE2360C17200370CB3 /* CommentViewController.swift */; };
 		D0F840F12360C18000370CB3 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F840F02360C18000370CB3 /* PostViewController.swift */; };
@@ -37,6 +39,8 @@
 		D0DDD68F235FD0210029F954 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0DDD692235FD0210029F954 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0DDD694235FD0210029F954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0F3F3C52361190F0099805D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D0F3F3C82361198C0099805D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D0F840EC2360B81E00370CB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0F840EE2360C17200370CB3 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		D0F840F02360C18000370CB3 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -108,8 +112,18 @@
 				D0DDD691235FD0210029F954 /* LaunchScreen.storyboard */,
 				D0DDD694235FD0210029F954 /* Info.plist */,
 				D0F840EC2360B81E00370CB3 /* GoogleService-Info.plist */,
+				D0F3F3C72361195D0099805D /* Model */,
 			);
 			path = PruebaTecnicaLoro;
+			sourceTree = "<group>";
+		};
+		D0F3F3C72361195D0099805D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0F3F3C52361190F0099805D /* User.swift */,
+				D0F3F3C82361198C0099805D /* Post.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E5D4661A5A41AEBA7B322C2B /* Frameworks */ = {
@@ -244,6 +258,8 @@
 				D0DDD687235FD01E0029F954 /* AppDelegate.swift in Sources */,
 				D0DDD689235FD01E0029F954 /* SceneDelegate.swift in Sources */,
 				D037AA2D235FE3AB00F044E2 /* HomeViewController.swift in Sources */,
+				D0F3F3C62361190F0099805D /* User.swift in Sources */,
+				D0F3F3C92361198C0099805D /* Post.swift in Sources */,
 				D0F840F32360D5F200370CB3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +406,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XWFZ5Y579Z;
 				INFOPLIST_FILE = PruebaTecnicaLoro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -408,6 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XWFZ5Y579Z;
 				INFOPLIST_FILE = PruebaTecnicaLoro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
