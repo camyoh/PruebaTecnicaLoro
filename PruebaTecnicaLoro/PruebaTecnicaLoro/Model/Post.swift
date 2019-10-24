@@ -16,6 +16,6 @@ struct Comentario: Codable {
 struct Post: Codable {
     let post: String?
     let usuario: String?
-    let photoUrl: URL?
+    let foto: String?
     let comentarios: [Comentario]
 }
