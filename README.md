@@ -65,7 +65,7 @@ struct Post {
 }
 ```
 
-Lo primero que se muestra es la vista de Login (ViewController), esta vista hace un check de los campos para saber si los campos están completados.
+Lo primero que se muestra es la vista de Login (ViewController), esta vista hace un check de los campos para saber si los campos están completados. 
 
 <img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/login.png" width="40%" height="40%">
 
@@ -86,6 +86,20 @@ En el momento que se escribe un texto se elimina un place holder que se hizo pro
 Una vez publicado la aplicación se dirije a la vista de contenido donde se puede apreciar el nuevo post agregado.
 <img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/content2.png" width="40%" height="40%">
 
+finalmente tenemos la vista de comentarios que al momento no se ha podido implementar. 
+<img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/content2.png" width="40%" height="40%">
+
+# Credenciales Usuarios de Prueba
+user1@test.com
+pass: 123456
+
+user2@test.com
+pass: 123456
+
+user3@test.com
+pass: 123456
+
+<img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/users.png" width="40%" height="40%">
 
 # ¿Qué características considera que tiene un buen código?
 
