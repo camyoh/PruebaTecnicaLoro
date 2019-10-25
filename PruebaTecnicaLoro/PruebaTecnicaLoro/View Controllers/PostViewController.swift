@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class PostViewController: UIViewController {
     
@@ -16,6 +17,8 @@ class PostViewController: UIViewController {
     @IBOutlet weak var publicarButton: UIBarButtonItem!
     
     var user = User()
+    let ref = Database.database().reference(withPath: "posts")
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,16 +43,17 @@ class PostViewController: UIViewController {
     }
     
     @IBAction func publicarTapped(_ sender: Any) {
+        let post = Post(foto: user.photoUrl!.absoluteString, post: postTextView.text, usuario: user.email!)
+        let postRef = self.ref.child("4")
+        postRef.setValue(post.toAnyObject())
+        transitionToContent()
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+   
+    func transitionToContent () {
+        let contentViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.contentViewController) as? ContentViewController
+        view.window?.rootViewController = contentViewController
+        view.window?.makeKeyAndVisible()
+    }
     
 }
 
