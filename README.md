@@ -9,6 +9,7 @@ User que se encarga de authenticar al usuario a firebase.
 struct User {
     private(set) var email: String?
     private(set) var photoUrl: URL?
+    
     mutating func getUserData () {
         let user = Auth.auth().currentUser
         if let user = user {
@@ -26,12 +27,14 @@ struct Post {
     let post: String
     let usuario: String
     var comentarios: [NSDictionary] = [["comentarios":"default","usuario":"default"]]
+    
     init (foto: String, post: String, usuario: String) {
         self.ref = nil
         self.foto = foto
         self.post = post
         self.usuario = usuario
     }
+    
     init?(snapshot: DataSnapshot) {
         guard
             let value = snapshot.value as? [String:AnyObject],
@@ -46,6 +49,7 @@ struct Post {
         self.usuario = usuario
         self.comentarios = comentarios as! [NSDictionary]
     }
+    
     func toAnyObject() -> Any {
         return [
             "foto": foto,
