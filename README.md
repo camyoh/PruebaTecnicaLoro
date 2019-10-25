@@ -7,7 +7,7 @@ En la carpeta Model hay dos estructuras, la primera es la estructura
 User que se encarga de authenticar al usuario a firebase. 
 
 <code>
-struct User {
+"struct User {
     private(set) var email: String?
     private(set) var photoUrl: URL?
     mutating func getUserData () {
@@ -17,7 +17,7 @@ struct User {
             self.photoUrl = user.photoURL
         }
     }
-}
+}"
 </code>
 
 La segunda estructura es Post que está hecha con la misma forma que se encuentra la estructura de la base de datos en firebase, se tiene cada propiedad del mismo tipo que se encuentra en la base de datos. Esta estructura tiene dos init uno crear el objeto y subirlo a firebase y el otro init opcional que se encarga de crear el objeto con los datos que vienen de firebase. Con la aplicación no se pueden agregar comentarios pero la variable se tenía en mente para poder agregarlos.
