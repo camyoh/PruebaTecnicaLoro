@@ -1,6 +1,6 @@
 # Prueba Tecnica Loro
 
-El proyecto está dividido en carpetas, cada carpeta corresponde a una vista donde están los archivos que la conforman.
+El proyecto se realizó en Xcode 11.1 para un dispositivo iOS con versión 13.1. El proyecto está dividido en carpetas, cada carpeta corresponde a una vista donde están los archivos que la conforman.
 
 En la carpeta Model hay dos estructuras, la primera es la estructura 
 
@@ -65,17 +65,22 @@ struct Post {
 }
 ```
 
-Lo primero que se muestra es la vista de Login (ViewController)
+Lo primero que se muestra es la vista de Login (ViewController), esta vista hace un check de los campos para saber si los campos están completados.
 
 <img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/login.png" width="40%" height="40%">
 
-La primer vista que se muestra después del login es un UITabBarController que por defecto carga a ContentViewController,
+La primer vista que se muestra después del login es un UITabBarController que por defecto carga a ContentViewController, en esta vista se encuentra el listado de los posts que se trajeron de la base de datos. En la parte de arriba encontramos la umagen del usuario y una opción para agregar un post. Le sigue un tableview que muestra la imagen de cada usuario el correo,  el post que escribió y un botón de comnetar que redirige a los comentarios pero todavía no están implementados todavía.
 
 <img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/content1.png" width="40%" height="40%">
 
 la segunda pestaña es UserViewController que tiene la imagen del usuario, el correo y un botón para cerrar sesión.
 
 <img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/profile.png" width="40%" height="40%">
+
+Cuando el usuario selecciona escribir un post se abre la vista que tiene el PostViewController
+
+<img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/publicar.png" width="40%" height="40%">
+<img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/publicar2.png" width="40%" height="40%">
 
 # ¿Qué características considera que tiene un buen código?
 
