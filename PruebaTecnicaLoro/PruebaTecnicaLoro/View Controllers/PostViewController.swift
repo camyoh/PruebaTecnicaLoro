@@ -18,11 +18,12 @@ class PostViewController: UIViewController {
     
     var user = User()
     let ref = Database.database().reference(withPath: "posts")
-
+    var newPosition = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUserImage()
+        getPositionForTheNewPost()
         self.postTextView.delegate = self
     }
     
@@ -43,10 +44,28 @@ class PostViewController: UIViewController {
     }
     
     @IBAction func publicarTapped(_ sender: Any) {
-        let post = Post(foto: user.photoUrl!.absoluteString, post: postTextView.text, usuario: user.email!)
-        let postRef = self.ref.child("4")
-        postRef.setValue(post.toAnyObject())
+        addingNewPost()
         transitionToContent()
+    }
+    
+    func getPositionForTheNewPost (){
+        ref.queryOrdered(byChild: "posts").observe(.value) { (snapshot) in
+            var newItems: [Post] = []
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                    let post = Post(snapshot: snapshot) {
+                    newItems.append(post)
+                }
+            }
+            self.newPosition = String(newItems.count)
+        }
+        
+    }
+    
+    func addingNewPost() {
+        let post = Post(foto: user.photoUrl!.absoluteString, post: postTextView.text, usuario: user.email!)
+        let postRef = self.ref.child(newPosition)
+        postRef.setValue(post.toAnyObject())
     }
    
     func transitionToContent () {
