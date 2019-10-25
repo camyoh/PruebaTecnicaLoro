@@ -11,16 +11,18 @@ import FirebaseDatabase
 
 class ContentViewController: UIViewController {
     var user = User()
+    var posts: [Post] = []
+    let ref = Database.database().reference(withPath: "posts")
+    
     @IBOutlet weak var postsTableView: UITableView!
     @IBOutlet weak var userImage: UIImageView!
     
-    var posts: [Post] = []
-    let ref = Database.database().reference(withPath: "posts")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUserImage()
         getPostData()
+        configUserImage()
     }
     
     func getPostData() {
@@ -43,6 +45,11 @@ class ContentViewController: UIViewController {
             userImage.downloadImage(from: photoUrl)
         }
     }
+    
+    func configUserImage() {
+        userImage.layer.cornerRadius = userImage.frame.size.width / 2
+    }
+    
 }
 
 extension ContentViewController: UITableViewDelegate, UITableViewDataSource {

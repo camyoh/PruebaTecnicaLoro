@@ -154,7 +154,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V6D-jk-Jbh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V6D-jk-Jbh">
                                 <rect key="frame" x="0.0" y="156" width="414" height="657"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -186,9 +186,11 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZK-dv-8IG">
                                                     <rect key="frame" x="10" y="90.5" width="394" height="36.5"/>
-                                                    <state key="normal" title="Comentar"/>
+                                                    <state key="normal" title="Comentar">
+                                                        <color key="titleColor" red="0.0" green="0.75686274509999996" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
                                                     <connections>
-                                                        <segue destination="ObO-TM-VVf" kind="show" id="gRQ-fE-w4M"/>
+                                                        <segue destination="ObO-TM-VVf" kind="show" id="Ucu-DR-Kmf"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -245,18 +247,82 @@
         <!--Comentar-->
         <scene sceneID="oMW-6A-GUG">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="ObO-TM-VVf" customClass="CommentViewController" customModule="PruebaTecnicaLoro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommentVC" modalPresentationStyle="fullScreen" id="ObO-TM-VVf" customClass="CommentViewController" customModule="PruebaTecnicaLoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YnL-3h-5Ic">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escribe tu comentario..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pk7-ik-oF0">
+                                <rect key="frame" x="10" y="98" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGA-x6-12v">
+                                <rect key="frame" x="10" y="140" width="394" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="duA-cC-xKp">
+                                <rect key="frame" x="0.0" y="168.5" width="414" height="644.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="69" id="rsG-3f-las">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rsG-3f-las" id="N8b-0V-EcW">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtR-yP-ekM">
+                                                    <rect key="frame" x="8" y="8" width="398" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comentario" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ts2-nR-X55">
+                                                    <rect key="frame" x="8" y="37" width="398" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vtR-yP-ekM" firstAttribute="leading" secondItem="N8b-0V-EcW" secondAttribute="leading" constant="8" id="Bqe-fY-pQn"/>
+                                                <constraint firstAttribute="trailing" secondItem="vtR-yP-ekM" secondAttribute="trailing" constant="8" id="CQf-wo-Wjb"/>
+                                                <constraint firstItem="ts2-nR-X55" firstAttribute="top" secondItem="vtR-yP-ekM" secondAttribute="bottom" constant="8" id="Oan-PB-BeD"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ts2-nR-X55" secondAttribute="bottom" constant="8" id="fAD-B6-xh3"/>
+                                                <constraint firstItem="ts2-nR-X55" firstAttribute="leading" secondItem="N8b-0V-EcW" secondAttribute="leading" constant="8" id="rxY-qL-tz4"/>
+                                                <constraint firstItem="vtR-yP-ekM" firstAttribute="top" secondItem="N8b-0V-EcW" secondAttribute="top" constant="8" id="yeh-Zh-muU"/>
+                                                <constraint firstAttribute="trailing" secondItem="ts2-nR-X55" secondAttribute="trailing" constant="8" id="zu9-cx-PnO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="L5E-O2-cqN" firstAttribute="trailing" secondItem="uGA-x6-12v" secondAttribute="trailing" constant="10" id="1aR-yk-MMS"/>
+                            <constraint firstItem="uGA-x6-12v" firstAttribute="leading" secondItem="L5E-O2-cqN" secondAttribute="leading" constant="10" id="CVh-49-Abj"/>
+                            <constraint firstItem="duA-cC-xKp" firstAttribute="bottom" secondItem="L5E-O2-cqN" secondAttribute="bottom" id="Oq5-Vk-vMr"/>
+                            <constraint firstItem="duA-cC-xKp" firstAttribute="trailing" secondItem="L5E-O2-cqN" secondAttribute="trailing" id="QB7-Zo-xFd"/>
+                            <constraint firstItem="duA-cC-xKp" firstAttribute="top" secondItem="uGA-x6-12v" secondAttribute="bottom" constant="8" id="UUs-Kh-M29"/>
+                            <constraint firstItem="Pk7-ik-oF0" firstAttribute="leading" secondItem="L5E-O2-cqN" secondAttribute="leading" constant="10" id="V6w-Do-VOT"/>
+                            <constraint firstItem="uGA-x6-12v" firstAttribute="top" secondItem="Pk7-ik-oF0" secondAttribute="bottom" constant="8" id="b7Y-sK-7LY"/>
+                            <constraint firstItem="L5E-O2-cqN" firstAttribute="trailing" secondItem="Pk7-ik-oF0" secondAttribute="trailing" constant="10" id="dmY-tI-leG"/>
+                            <constraint firstItem="Pk7-ik-oF0" firstAttribute="top" secondItem="L5E-O2-cqN" secondAttribute="top" constant="10" id="kpw-iy-uqX"/>
+                            <constraint firstItem="duA-cC-xKp" firstAttribute="leading" secondItem="L5E-O2-cqN" secondAttribute="leading" id="wdT-ee-q86"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="L5E-O2-cqN"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Comentar" id="hUU-FS-ce2"/>
+                    <navigationItem key="navigationItem" title="Comentar" id="hUU-FS-ce2">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Comentar" id="yZo-FH-MzB"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ksg-D0-cxX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3716" y="-226"/>
+            <point key="canvasLocation" x="3715.9420289855075" y="-226.33928571428569"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="fTr-P1-eeL">

@@ -19,6 +19,7 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUserInfo()
+        configUserImage()
     }
     
     @IBAction func logOutTapped(_ sender: UIButton) {
@@ -29,6 +30,10 @@ class UserViewController: UIViewController {
         let loginViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.loginViewController) as? ViewController
         view.window?.rootViewController = loginViewController
         view.window?.makeKeyAndVisible()
+    }
+    
+    func configUserImage() {
+        userImage.layer.cornerRadius = userImage.frame.size.width / 2
     }
 
     func loadUserInfo(){
@@ -57,6 +62,7 @@ extension UIImageView {
             DispatchQueue.main.async() {
                 self.image = UIImage(data: data)
             }
+            
         }
     }
 }

@@ -9,17 +9,12 @@
 import Foundation
 import FirebaseDatabase
 
-struct Comentario {
-    var comentario: String?
-    var usuario: String?
-}
-
 struct Post {
     let ref: DatabaseReference?
     let foto: String
     let post: String
     let usuario: String
-    
+    var comentarios: [NSDictionary] = [["comentarios":"default","usuario":"default"]]
     
     init (foto: String, post: String, usuario: String) {
         self.ref = nil
@@ -33,20 +28,22 @@ struct Post {
             let value = snapshot.value as? [String:AnyObject],
             let foto = value["foto"] as? String,
             let post = value["post"] as? String,
-            let usuario = value["usuario"] as? String else {
-            return nil
-        }
+            let usuario = value["usuario"] as? String,
+            let comentarios = value["comentarios"] as? NSArray
+            else { return nil }
         self.ref = snapshot.ref
         self.foto = foto
         self.post = post
         self.usuario = usuario
+        self.comentarios = comentarios as! [NSDictionary]
     }
     
     func toAnyObject() -> Any {
         return [
             "foto": foto,
             "post": post,
-            "usuario": usuario
+            "usuario": usuario,
+            "comentarios": comentarios
         ]
     }
 }

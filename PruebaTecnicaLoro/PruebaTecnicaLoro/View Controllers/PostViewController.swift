@@ -31,8 +31,6 @@ class PostViewController: UIViewController {
         dismiss(animated: true)
     }
     
-        
-    
     func loadUserImage(){
         user.getUserData()
         if let photoUrl = user.photoUrl {
@@ -45,7 +43,7 @@ class PostViewController: UIViewController {
     
     @IBAction func publicarTapped(_ sender: Any) {
         addingNewPost()
-        transitionToContent()
+        transitionToHome()
     }
     
     func getPositionForTheNewPost (){
@@ -68,9 +66,9 @@ class PostViewController: UIViewController {
         postRef.setValue(post.toAnyObject())
     }
    
-    func transitionToContent () {
-        let contentViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.contentViewController) as? ContentViewController
-        view.window?.rootViewController = contentViewController
+    func transitionToHome () {
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
     }
     

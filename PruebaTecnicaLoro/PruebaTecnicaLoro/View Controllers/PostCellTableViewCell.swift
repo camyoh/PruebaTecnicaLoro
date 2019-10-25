@@ -19,7 +19,8 @@ class PostCellTableViewCell: UITableViewCell {
     func fillCell (with post: Post) {
         postLabel.text = post.post
         emailUserLabel.text = post.usuario
-        profileImage.downloadImage(from: URL(fileURLWithPath: "https://firebasestorage.googleapis.com/v0/b/loginpruebaloro.appspot.com/o/user1.png?alt=media&token=9020d0e5-8cde-4e0d-ae93-d597b1701941" ))
+        profileImage.downloadImage(from: URL(string: post.foto)!)
+        profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
     }
 
 }
