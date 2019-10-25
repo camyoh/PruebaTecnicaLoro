@@ -1,4 +1,4 @@
-# Prueba Tecnica Loro
+# Prueba Técnica Loro
 
 El proyecto se realizó en Xcode 11.1 para un dispositivo iOS con versión 13.1. El proyecto está dividido en carpetas, cada carpeta corresponde a una vista donde están los archivos que la conforman.
 
