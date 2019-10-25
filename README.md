@@ -9,7 +9,6 @@ User que se encarga de authenticar al usuario a firebase.
 struct User {
     private(set) var email: String?
     private(set) var photoUrl: URL?
-    
     mutating func getUserData () {
         let user = Auth.auth().currentUser
         if let user = user {
@@ -27,14 +26,12 @@ struct Post {
     let post: String
     let usuario: String
     var comentarios: [NSDictionary] = [["comentarios":"default","usuario":"default"]]
-    
     init (foto: String, post: String, usuario: String) {
         self.ref = nil
         self.foto = foto
         self.post = post
         self.usuario = usuario
     }
-    
     init?(snapshot: DataSnapshot) {
         guard
             let value = snapshot.value as? [String:AnyObject],
@@ -49,7 +46,6 @@ struct Post {
         self.usuario = usuario
         self.comentarios = comentarios as! [NSDictionary]
     }
-    
     func toAnyObject() -> Any {
         return [
             "foto": foto,
@@ -62,9 +58,15 @@ struct Post {
 
 Lo primero que se muestra es la vista de Login (ViewController)
 
-<img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/login.png" width="50%" height="50%">
+<img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/login.png" width="40%" height="40%">
 
-La primer vista que se muestra después del login es un UITabBarController que por defecto carga a ContentViewController, la segunda pestaña es UserViewController que tiene la imagen del usuario, el correo y un botón para cerrar sesión.
+La primer vista que se muestra después del login es un UITabBarController que por defecto carga a ContentViewController,
+
+<img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/content1.png" width="40%" height="40%">
+
+la segunda pestaña es UserViewController que tiene la imagen del usuario, el correo y un botón para cerrar sesión.
+
+<img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/profile.png" width="40%" height="40%">
 
 # ¿Qué características considera que tiene un buen código?
 
