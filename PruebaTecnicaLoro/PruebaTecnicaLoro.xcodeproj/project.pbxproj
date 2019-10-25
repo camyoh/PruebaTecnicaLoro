@@ -71,24 +71,63 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		D037AA27235FDFB600F044E2 /* View Controllers */ = {
+		D014F7B8236370D800129DA5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0DDD686235FD01E0029F954 /* AppDelegate.swift */,
+				D0DDD68F235FD0210029F954 /* Assets.xcassets */,
+				D0DDD691235FD0210029F954 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D014F7B92363710200129DA5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				D0DDD68A235FD01E0029F954 /* ViewController.swift */,
-				D037AA28235FDFE500F044E2 /* ContentViewController.swift */,
-				D037AA2A235FDFF100F044E2 /* UserViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D014F7BA2363711500129DA5 /* Content */ = {
+			isa = PBXGroup;
+			children = (
 				D037AA2C235FE3AB00F044E2 /* HomeViewController.swift */,
+				D037AA28235FDFE500F044E2 /* ContentViewController.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		D014F7BB2363712A00129DA5 /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D037AA2A235FDFF100F044E2 /* UserViewController.swift */,
+			);
+			path = "User Profile";
+			sourceTree = "<group>";
+		};
+		D014F7BC2363714100129DA5 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
 				D0F840EE2360C17200370CB3 /* CommentViewController.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		D014F7BD2363715300129DA5 /* New Post */ = {
+			isa = PBXGroup;
+			children = (
 				D0F840F02360C18000370CB3 /* PostViewController.swift */,
 				D061757B23622DA0009129E7 /* PostCellTableViewCell.swift */,
 			);
-			path = "View Controllers";
+			path = "New Post";
 			sourceTree = "<group>";
 		};
 		D0DDD67A235FD01E0029F954 = {
 			isa = PBXGroup;
 			children = (
 				D0DDD685235FD01E0029F954 /* PruebaTecnicaLoro */,
+				D014F7B8236370D800129DA5 /* Supporting Files */,
 				D0DDD684235FD01E0029F954 /* Products */,
 				0EACE69977B824738190BC9A /* Pods */,
 				E5D4661A5A41AEBA7B322C2B /* Frameworks */,
@@ -106,13 +145,14 @@
 		D0DDD685235FD01E0029F954 /* PruebaTecnicaLoro */ = {
 			isa = PBXGroup;
 			children = (
-				D037AA27235FDFB600F044E2 /* View Controllers */,
-				D0DDD686235FD01E0029F954 /* AppDelegate.swift */,
+				D014F7BD2363715300129DA5 /* New Post */,
+				D014F7BC2363714100129DA5 /* Comments */,
+				D014F7BB2363712A00129DA5 /* User Profile */,
+				D014F7BA2363711500129DA5 /* Content */,
+				D014F7B92363710200129DA5 /* Login */,
 				D0F840F22360D5F200370CB3 /* Constants.swift */,
 				D0DDD688235FD01E0029F954 /* SceneDelegate.swift */,
 				D0DDD68C235FD01E0029F954 /* Main.storyboard */,
-				D0DDD68F235FD0210029F954 /* Assets.xcassets */,
-				D0DDD691235FD0210029F954 /* LaunchScreen.storyboard */,
 				D0DDD694235FD0210029F954 /* Info.plist */,
 				D0F840EC2360B81E00370CB3 /* GoogleService-Info.plist */,
 				D0F3F3C72361195D0099805D /* Model */,

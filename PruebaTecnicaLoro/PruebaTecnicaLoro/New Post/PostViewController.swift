@@ -24,6 +24,7 @@ class PostViewController: UIViewController {
         super.viewDidLoad()
         loadUserImage()
         getPositionForTheNewPost()
+        configUserImage()
         self.postTextView.delegate = self
     }
     
@@ -58,6 +59,10 @@ class PostViewController: UIViewController {
             self.newPosition = String(newItems.count)
         }
         
+    }
+    
+    func configUserImage() {
+        userImage.layer.cornerRadius = userImage.frame.size.width / 2
     }
     
     func addingNewPost() {
