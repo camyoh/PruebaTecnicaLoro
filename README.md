@@ -62,7 +62,7 @@ struct Post {
 
 Lo primero que se muestra es la vista de Login (ViewController)
 
-![Login](https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/login.png | width=50)
+![Login](https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/login.png){:height="50%" width="50%"}
 
 La primer vista que se muestra después del login es un UITabBarController que por defecto carga a ContentViewController, la segunda pestaña es UserViewController que tiene la imagen del usuario, el correo y un botón para cerrar sesión.
 
