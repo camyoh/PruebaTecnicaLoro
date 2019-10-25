@@ -80,7 +80,12 @@ la segunda pestaña es UserViewController que tiene la imagen del usuario, el co
 Cuando el usuario selecciona escribir un post se abre la vista que tiene el PostViewController
 
 <img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/publicar.png" width="40%" height="40%">
+En el momento que se escribe un texto se elimina un place holder que se hizo programáticamente, y se habilita el botón de publicar, si el texto está vacío este botón se deshabilita.
 <img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/publicar2.png" width="40%" height="40%">
+
+Una vez publicado la aplicación se dirije a la vista de contenido donde se puede apreciar el nuevo post agregado.
+<img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/content2.png" width="40%" height="40%">
+
 
 # ¿Qué características considera que tiene un buen código?
 
