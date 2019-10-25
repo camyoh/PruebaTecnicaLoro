@@ -99,7 +99,16 @@ pass: 123456
 user3@test.com
 pass: 123456
 
-<img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/users.png" width="40%" height="40%">
+<img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/users.png" width="60%" height="60%">
+
+# Base de datos en firebase
+Para la base de datos se creó en un comienzo un archivo JSON que se subión a la plataforma y posteriormente se fue actualizando con la aplicación.
+
+<img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/baseDatos.png" width="40%" height="40%">
+
+# Imágenes de los usuarios
+Las imágenes de los usuarios están almacenadas en firebase, por medio del link que cada una tiene se hace la descarga en la aplicación 
+<img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/profileImages.png" width="40%" height="40%">
 
 # ¿Qué características considera que tiene un buen código?
 
