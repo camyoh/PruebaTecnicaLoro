@@ -56,5 +56,13 @@ class PostViewController: UIViewController {
 extension PostViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         postTextView.text = ""
+        postTextView.textColor = #colorLiteral(red: 0.07841805369, green: 0.07843922824, blue: 0.07841510326, alpha: 1)
+    }
+    func textViewDidChange(_ textView: UITextView) {
+        if postTextView.text == "" {
+            publicarButton.isEnabled = false
+        } else {
+            publicarButton.isEnabled = true
+        }
     }
 }
