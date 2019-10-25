@@ -10,14 +10,16 @@ import UIKit
 import FirebaseDatabase
 
 class ContentViewController: UIViewController {
-    
+    var user = User()
     @IBOutlet weak var postsTableView: UITableView!
+    @IBOutlet weak var userImage: UIImageView!
     
     var posts: [Post] = []
     let ref = Database.database().reference(withPath: "posts")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadUserImage()
         getPostData()
     }
     
@@ -32,6 +34,13 @@ class ContentViewController: UIViewController {
             }
             self.posts = newItems
             self.postsTableView.reloadData()
+        }
+    }
+    
+    func loadUserImage(){
+        user.getUserData()
+        if let photoUrl = user.photoUrl {
+            userImage.downloadImage(from: photoUrl)
         }
     }
 }

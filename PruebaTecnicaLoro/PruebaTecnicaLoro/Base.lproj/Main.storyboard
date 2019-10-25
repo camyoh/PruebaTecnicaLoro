@@ -235,6 +235,7 @@
                     <navigationItem key="navigationItem" id="dou-qX-91m"/>
                     <connections>
                         <outlet property="postsTableView" destination="V6D-jk-Jbh" id="yqL-qu-Z3X"/>
+                        <outlet property="userImage" destination="Zh6-pe-7CD" id="qlo-CP-ee4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Uw-eI-vY5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -274,7 +275,11 @@
                                                 <action selector="cancerlarTapped:" destination="9Cl-zD-kc0" id="GGl-cE-Ikh"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Publicar" style="plain" id="IJw-We-VJF"/>
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Publicar" style="plain" id="IJw-We-VJF">
+                                            <connections>
+                                                <action selector="publicarTapped:" destination="9Cl-zD-kc0" id="ysj-kN-luM"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -296,10 +301,10 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Escribe" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9e1-wc-vqT">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Escribe tu post aqui..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9e1-wc-vqT">
                                 <rect key="frame" x="10" y="148" width="394" height="724"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -319,6 +324,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i6r-zo-mxa"/>
                     </view>
+                    <connections>
+                        <outlet property="postTextView" destination="9e1-wc-vqT" id="MsG-Bf-Co9"/>
+                        <outlet property="publicarButton" destination="IJw-We-VJF" id="UiP-1J-H7V"/>
+                        <outlet property="userImage" destination="0fT-Fm-zf7" id="uAI-5f-ox4"/>
+                        <outlet property="userNameLabel" destination="7Ht-he-lWb" id="3q0-Np-lcS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcx-Sk-m7Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
