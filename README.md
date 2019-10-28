@@ -21,7 +21,7 @@ struct User {
 }
 ```
 
-La segunda estructura es Post que está hecha con la misma forma que se encuentra la estructura de la base de datos en firebase, se tiene cada propiedad del mismo tipo que se encuentra en la base de datos. Esta estructura tiene dos init uno crear el objeto y subirlo a firebase y el otro init opcional que se encarga de crear el objeto con los datos que vienen de firebase. Con la aplicación no se pueden agregar comentarios pero la variable se tenía en mente para poder agregarlos.
+La segunda estructura es Post que está hecha con la misma forma que se encuentra la estructura de la base de datos en firebase, se tiene cada propiedad del mismo tipo que se encuentra en la base de datos. Esta estructura tiene dos init uno crear el objeto y subirlo a firebase y el otro init opcional que se encarga de crear el objeto con los datos que vienen de firebase. Con la aplicación no se pueden agregar comentarios, pero la estructura para poder agregarlos y descargarlos se pensó desde un comienzo, es por esto que se tiene una propiedad comentarios.
 
 
 ```swift
@@ -65,11 +65,11 @@ struct Post {
 }
 ```
 
-Lo primero que se muestra es la vista de Login (ViewController), esta vista hace un check de los campos para saber si los campos están completados. 
+Lo primero que se muestra es la vista de Login (ViewController), esta vista hace un check de los campos para saber si los campos están completados. Existen dos tipos de validaciones, la primera se hace en el mismo ViewController para verificar espacios en blanco en las dos casillas, la segunda verificación se hace directamente con firebase, mostrando al usuario el mensaje de error que la plataforma retorna al no haber un login exitoso.
 
 <img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/login.png" width="40%" height="40%">
 
-La primer vista que se muestra después del login es un UITabBarController que por defecto carga a ContentViewController, en esta vista se encuentra el listado de los posts que se trajeron de la base de datos. En la parte de arriba encontramos la umagen del usuario y una opción para agregar un post. Le sigue un tableview que muestra la imagen de cada usuario el correo,  el post que escribió y un botón de comnetar que redirige a los comentarios pero todavía no están implementados todavía.
+La primer vista que se muestra después del login es un UITabBarController que por defecto carga a ContentViewController, en esta vista se encuentra el listado de los posts que se trajeron de la base de datos. En la parte de arriba encontramos la imagen del usuario y una opción para agregar un post. Le sigue un tableview que muestra la imagen de cada usuario, el correo, el post que escribió y un botón de comentar que redirige a los comentarios pero todavía no están implementados.
 
 <img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/content1.png" width="40%" height="40%">
 
@@ -80,13 +80,15 @@ la segunda pestaña es UserViewController que tiene la imagen del usuario, el co
 Cuando el usuario selecciona escribir un post se abre la vista que tiene el PostViewController
 
 <img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/publicar.png" width="40%" height="40%">
-En el momento que se escribe un texto se elimina un place holder que se hizo programáticamente, y se habilita el botón de publicar, si el texto está vacío este botón se deshabilita.
+En el momento que se escribe un texto se elimina un place holder (simulado) que se hizo programáticamente, esto se hizo utilizando un delegado para el TextField. Cuando el usuario escribe algo se habilita el botón de publicar, si el texto vuelve a estar vacío este botón se deshabilita.
 <img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/publicar2.png" width="40%" height="40%">
 
-Una vez publicado la aplicación se dirije a la vista de contenido donde se puede apreciar el nuevo post agregado.
+Una vez publicado la aplicación se dirige a la vista de contenido donde se puede apreciar el nuevo post recientemente agregado.
+
 <img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/content2.png" width="40%" height="40%">
 
-finalmente tenemos la vista de comentarios que al momento no se ha podido implementar. 
+Finalmente tenemos la vista de comentarios que al momento no se ha podido implementar, pero que como se mencionó anteriormente en la estructura del post ya se tenía en mente poder desarrollar está parte.
+
 <img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/content2.png" width="40%" height="40%">
 
 # Credenciales Usuarios de Prueba
@@ -101,6 +103,17 @@ pass: 123456
 
 <img src="https://raw.githubusercontent.com/camyoh/PruebaTecnicaLoro/master/images/users.png" width="60%" height="60%">
 
+# Pods usados con CocoaPods
+En la aplicación se uso de los siguientes pods. 
+- Firebase/Analytics
+- Firebase/Auth
+- Firebase/Core
+- Firebase/Firestore
+- Firebase/Database
+Para instalar los pods
+```
+pod install
+```
 # Base de datos en firebase
 Para la base de datos se creó en un comienzo un archivo JSON que se subión a la plataforma y posteriormente se fue actualizando con la aplicación.
 
